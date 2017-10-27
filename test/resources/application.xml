@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//RONGDI//DTD BEAN//CN" 
+    "http://www.cnblogs.com/rongdi/beans.dtd">
+<beans>
+	<bean id="mao" class="com.mao.ioc.testobj.Mao">
+        <constructor-arg>
+            <value type="java.lang.Integer">1</value>
+        </constructor-arg>
+        <constructor-arg>
+            <value type="java.lang.String">mao</value>
+        </constructor-arg>
+        <constructor-arg>
+            <value type="int">2</value>
+        </constructor-arg>
+    </bean>
+    <bean id="children" class="com.mao.ioc.testobj.Children">
+    	 <constructor-arg>
+            <value type="java.lang.String">jjw</value>
+        </constructor-arg>
+        <property name="mao">
+            <ref bean="mao"/>
+        </property> 
+        <property name="id">
+           <value type="java.lang.Integer">1</value>
+        </property>   
+    </bean>
+</beans>
